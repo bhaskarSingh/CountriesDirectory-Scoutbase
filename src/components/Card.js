@@ -9,9 +9,9 @@ const Card = ({ name, continent, languages }) => {
       <div>
         <SubHeader>Languages</SubHeader>
         {languages &&
-          languages.map(lang => {
+          languages.map((lang, index) => {
             return (
-              <Content>
+              <Content key={index}>
                 {lang.name}, <Small>Native:</Small> {lang.native}
               </Content>
             );
