@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const HeaderContainer = styled.header`
   background-color: #fff;
-  font-weight: 700;
+  font-weight: 800;
   padding: 1rem;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   color: #363434;
