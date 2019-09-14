@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/react-hooks";
 import Header from "./Header";
 import Layout from "./Layout";
 import CardI from "./Card";
+import Loader from "./Loader";
 import styled from "styled-components";
 const query = gql`
   {
@@ -31,6 +32,7 @@ const Countries = () => {
     <Layout>
       <Header />
       <Container>
+        {loading && <Loader />}
         {data &&
           data.countries.map((country, index) => {
             return (
