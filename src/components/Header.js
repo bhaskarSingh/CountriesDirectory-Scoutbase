@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "@reach/router";
 
-const HeaderContainer = styled.header`
+const HeaderContainer = styled(Link)`
   background-color: #fff;
   font-weight: 800;
   padding: 1rem;
@@ -10,10 +11,11 @@ const HeaderContainer = styled.header`
   height: 3.5rem;
   display: flex;
   align-items: center;
+  text-decoration: none;
 `;
 
 const Header = () => {
-  return <HeaderContainer>Countries Directory</HeaderContainer>;
+  return <HeaderContainer to="/">Countries Directory</HeaderContainer>;
 };
 
 export default Header;
