@@ -6,6 +6,7 @@ import { useQuery } from "@apollo/react-hooks";
 import Header from "./Header";
 import Layout from "./Layout";
 import Loader from "./Loader";
+import Error from "./Error";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 
 const Country = ({ id }) => {
@@ -26,6 +27,7 @@ const Country = ({ id }) => {
     <Layout>
       <Header />
       {loading && <Loader />}
+      {error && <Error>Error loading Country Data, please try again :(</Error>}
       <div>
         {data && (
           <CardContainer>

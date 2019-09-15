@@ -5,6 +5,7 @@ import Header from "./Header";
 import Layout from "./Layout";
 import CardI from "./Card";
 import Loader from "./Loader";
+import Error from "./Error";
 import styled from "styled-components";
 const query = gql`
   {
@@ -32,6 +33,9 @@ const Countries = () => {
       <Header />
       <Container>
         {loading && <Loader />}
+        {error && (
+          <Error>Error Loading Countries data, please try again :(</Error>
+        )}
         {data &&
           data.countries.map((country, index) => {
             return (
