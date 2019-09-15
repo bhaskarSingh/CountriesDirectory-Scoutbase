@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-
-const Card = ({ name, continent, languages }) => {
+import { navigate } from "@reach/router";
+const Card = ({ name, continent, languages, code }) => {
   return (
     <CardContainer>
       <Title>{name || ""}</Title>
@@ -17,10 +17,13 @@ const Card = ({ name, continent, languages }) => {
             );
           })}
       </div>
-      <div>
+      <div style={{ flexGrow: 1 }}>
         <SubHeader>Continent</SubHeader>
         <Content>{continent && continent.name}</Content>
       </div>
+      <Button onClick={() => navigate(`/countries/${code}`)} type="button">
+        Explore
+      </Button>
     </CardContainer>
   );
 };
@@ -54,10 +57,27 @@ const Small = styled.span`
   color: #333;
 `;
 
+const Button = styled.button`
+  margin-top: 13px;
+  border: 1px solid black;
+  border-radius: 30px;
+  align-self: flex-end;
+  font-size: 0.765rem;
+  background-color: #fff;
+  cursor: pointer;
+  :focus,
+  :hover {
+    background-color: #444;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    color: #fff;
+  }
+`;
+
 Card.propTypes = {
   name: PropTypes.string.isRequired,
   languages: PropTypes.array.isRequired,
-  continent: PropTypes.object.isRequired
+  continent: PropTypes.object.isRequired,
+  code: PropTypes.string.isRequired
 };
 
 export default Card;

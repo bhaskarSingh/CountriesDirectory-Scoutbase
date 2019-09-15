@@ -9,10 +9,10 @@ const CustomLink = styled(Link)`
   font-weight: 600;
   border-radius: 40px;
   margin: 1rem;
+  border: 1px solid #000;
   :hover,
   :focus {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid #000;
   }
 `;
 

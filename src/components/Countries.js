@@ -9,6 +9,7 @@ import styled from "styled-components";
 const query = gql`
   {
     countries {
+      code
       name
       languages {
         code
@@ -25,9 +26,7 @@ const query = gql`
 
 const Countries = () => {
   const { loading, data, error } = useQuery(query);
-  console.log("loading", loading);
-  console.log("data", data);
-  console.log("error", error);
+
   return (
     <Layout>
       <Header />
@@ -41,6 +40,7 @@ const Countries = () => {
                 name={country.name}
                 languages={country.languages}
                 continent={country.continent}
+                code={country.code}
               />
             );
           })}

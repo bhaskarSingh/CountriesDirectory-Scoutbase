@@ -10,7 +10,7 @@ function HomePage() {
 
   const onSubmit = e => {
     e.preventDefault();
-    navigate(`/country/${countryId}`);
+    navigate(`/countries/${countryId}`);
   };
 
   return (
@@ -26,7 +26,7 @@ function HomePage() {
               name="countryId"
               type="text"
               value={countryId}
-              onChange={e => updateCountryId(e.target.value)}
+              onChange={e => updateCountryId(e.target.value.toUpperCase())}
               required
             />
           </Label>
@@ -46,6 +46,7 @@ const MainContainer = styled.div`
 `;
 
 const Form = styled.form`
+  border: 1px solid #000;
   padding: 1rem;
   margin: 1rem;
   text-align: center;
@@ -75,6 +76,11 @@ const Button = styled.button`
   color: #fff;
   background-image: linear-gradient(to right, #ffd177, #ffaa00);
   font-weight: 800;
+  cursor: pointer;
+  :focus,
+  :hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  }
 `;
 
 const Divider = styled.strong`
